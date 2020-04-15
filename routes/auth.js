@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
 
 		//Create and assign token is login successful
 		const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-		res.header('auth-token', token).send(token);
+		res.header('auth-token', token).send(token); //use res.cookies https://dev.to/mr_cea/remaining-stateless-jwt-cookies-in-node-js-3lle
 	});
 });
 
