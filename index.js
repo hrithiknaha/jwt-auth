@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 const authRoutes = require('./routes/auth');
+const postRoutes = require('./routes/post');
 
 const app = express();
 
@@ -21,5 +22,6 @@ mongoose.connect(
 app.use(express.json());
 
 app.use('/api/user', authRoutes);
+app.use('/api/posts', postRoutes);
 
 app.listen(3000, () => console.log(`Server listening at 3000`));
